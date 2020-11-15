@@ -6,7 +6,7 @@ ReLo is a simple project with the scope of learning how to make a login/register
    * How to handle HTML Forms
    
    
-# "Setup
+# Setup
 
 1. Install dependencies:
 ```
