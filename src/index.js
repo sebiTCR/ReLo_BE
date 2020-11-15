@@ -5,5 +5,5 @@ let port = 8080;
 
 app.listen(8080, ()=>
 {
-    console.info('Server listening on Port: ${port}')
+    console.info('Server listening on Port: ' + port)
 })
