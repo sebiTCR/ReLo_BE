@@ -3,6 +3,7 @@ const mongoose = require('mongoose')
 
 const port = 8080;
 const app = express();
+
 //DB Settings
 const DBURL = 'mongodb://localhost:27017/ReLo'
 const Settings = {
