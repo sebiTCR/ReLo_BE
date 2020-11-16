@@ -22,7 +22,8 @@
   },
   "homepage": "https://github.com/sebiTCR/ReLo_BE#readme",
   "dependencies": {
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "mongoose": "^5.10.14"
   },
   "devDependencies": {
     "nodemon": "^2.0.6"

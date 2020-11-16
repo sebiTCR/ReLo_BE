@@ -1,9 +1,28 @@
 const express = require('express');
-var app = express();
+const mongoose = require('mongoose')
 
-let port = 8080;
-
-app.listen(8080, ()=>
+const port = 8080;
+const app = express();
+//DB Settings
+const DBURL = 'mongodb://localhost:27017/ReLo'
+const Settings = {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+}
+//Connect to the database and then check if everything's fine
+const DB = mongoose.connect(DBURL, Settings);
+DB.then(()=>
 {
-    console.info('Server listening on Port: ${port}')
+    console.log('DB: Connected succesfully')
+}).catch((err) =>
+{
+    console.log('DB: There was a problem while connecting to the database: ' + err)
+})
+
+
+
+
+app.listen(port, ()=>
+{
+    console.info('Server listening on Port: ' + port)
 })
