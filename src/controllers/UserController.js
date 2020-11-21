@@ -64,8 +64,8 @@ module.exports.updateAccount = (req,res) =>
 
     user.findById(req.params.uname, (err,usr)=>
     {        
-        usr.username = req.body.username ? req.body.username : pers.username;
-        usr.password = req.body.password ? req.body.password : pers.password;
+        usr.username = req.body.username ? req.body.username : usr.username;
+        usr.password = req.body.password ? req.body.password : usr.password;
         
         usr.save((err)=>
         {
