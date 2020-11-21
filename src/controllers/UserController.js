@@ -134,3 +134,33 @@ module.exports.deleteAccount = (req,res) =>
         
     });
 }
+
+module.exports.loginUser = ((req, res)=>
+{
+    user.findOne({username: req.body.username}, (err, usrChk)=>
+    {
+        if(usrChk)
+        {
+            if(!err)
+            {
+                if(usrChk.password == req.body.password)
+                {
+                    //TODO: Generate a JWT token on login
+                    res.json({message: "I'm in"})
+                }        
+                else
+                {
+                    res.json({message: err})
+                }
+            }
+            else
+            {
+                res.json({message: err}); 
+            }
+        }
+        else
+        {
+            res.json({message: "User doesn't exists!"})
+        }
+    })
+})
