@@ -1,5 +1,7 @@
 const express = require('express');
 const mongoose = require('mongoose')
+const router = require('./routes/User')
+const bodyParser = require('body-parser')
 
 const port = 8080;
 const app = express();
@@ -19,6 +21,8 @@ DB.then(()=>
     console.log('DB: There was a problem while connecting to the database: ' + err)
 })
 
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use('/API', router)
 
 
 

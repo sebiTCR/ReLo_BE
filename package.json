@@ -22,6 +22,7 @@
   },
   "homepage": "https://github.com/sebiTCR/ReLo_BE#readme",
   "dependencies": {
+    "body-parser": "^1.19.0",
     "express": "^4.17.1",
     "mongoose": "^5.10.14"
   },
