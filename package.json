@@ -4,7 +4,7 @@
   "description": "The Back-End server for the ReLo app. The fuck knows what ReLo is about...Ask yashiro or Cazzanodaneci about this  ",
   "main": "index.js",
   "scripts": {
-    "test": "jest",
+    "test": "mocha tests/*.test.js --recursive",
     "start": "nodemon src/index.js",
     "start-production": "node src/index.js"
   },
@@ -23,10 +23,15 @@
   "homepage": "https://github.com/sebiTCR/ReLo_BE#readme",
   "dependencies": {
     "body-parser": "^1.19.0",
+    "chai": "^4.2.0",
+    "chai-http": "^4.3.0",
     "express": "^4.17.1",
-    "mongoose": "^5.10.14"
+    "mocha": "^8.2.1",
+    "mongoose": "^5.10.14",
+    "qs": "^6.9.4"
   },
   "devDependencies": {
+    "axios": "^0.21.0",
     "nodemon": "^2.0.6"
   }
 }

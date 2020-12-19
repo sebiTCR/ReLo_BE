@@ -20,7 +20,7 @@ module.exports.createUser = (req, res)=>{
                 {
                     if(!err)
                     {
-                        res.send({status: "success"});
+                        res.send({message: "success"});
                     }
                     else
                     {
@@ -113,6 +113,35 @@ module.exports.updateAccount = (req,res) =>
     });
 }
 
+module.exports.loginUser = ((req, res)=>
+{
+    user.findOne({username: req.body.username}, (err, usrChk)=>
+    {
+        if(usrChk)
+        {
+            if(!err)
+            {
+                if(usrChk.password == req.body.password)
+                {
+                    //TODO: Generate a JWT token on login
+                    res.json({message: "I'm in"})
+                }        
+                else
+                {
+                    res.json({message: err})
+                }
+            }
+            else
+            {
+                res.json({message: err}); 
+            }
+        }
+        else
+        {
+            res.json({message: "User doesn't exists!"})
+        }
+    })
+}) 
 
 module.exports.deleteAccount = (req,res) =>
 {
